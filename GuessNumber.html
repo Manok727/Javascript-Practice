@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guess Number</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="GuessNumber.css">
+
+</head>
+
+<body>
+    <div class="Guess">
+        <h1>Guess Number</h1>
+        <input type="number" id="input">
+        <button id="button">Guess</button>
+    </div>
+    <script>
+        var button = document.querySelector("#button");
+        var input = document.querySelector("#input");
+
+        function CheckNumber (){
+            console.log(input.value)
+        }
+        button.addEventListener("click", CheckNumber);
+    </script>
+</body>
+</html> 
