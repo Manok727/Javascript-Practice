@@ -1,12 +1,15 @@
 body {
-    background-color: #2f2d4d;
+    background-image: linear-gradient(red ,orange , yellow ,orange , red);
+    text-align: center;
 }
 
 h1 {
     border-style: dotted;
-    border-width: 5px;
-    border-color: #8565b9;
-    color: #6b5097;
+    border-color: #3f0c0c;
+    color: #3b051a;
+}
+h2 {
+    color: #38140b;
 }
 div {
     margin: 400px;
