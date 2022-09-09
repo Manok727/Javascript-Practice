@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang=en>
 <head>
     <title>Guess Number</title>
     <meta charset="UTF-8">
@@ -10,15 +10,35 @@
 <body>
     <div class="Guess">
         <h1>Guess Number</h1>
+        <br/>
+        <h2 id="output"></h2>
         <input type="number" id="input">
         <button id="button">Guess</button>
     </div>
     <script>
+        function getRandomInt(max){
+            return Math.floor(Math.random() * max + 1);
+        }
+        var RightNumber = getRandomInt(100);
+        console.log(RightNumber);
+        
+        var Tries = 5;
+
         var button = document.querySelector("#button");
         var input = document.querySelector("#input");
 
         function CheckNumber (){
             console.log(input.value)
+            console.log(RightNumber)
+            if (input.value == RightNumber){
+                document.getElementById("output").innerHTML="Right";
+            }
+            if (input.value < RightNumber){
+                document.getElementById("output").innerHTML="Too Low";
+            }
+            if (input.value > RightNumber){
+                document.getElementById("output").innerHTML="Too High";
+            }
         }
         button.addEventListener("click", CheckNumber);
     </script>
