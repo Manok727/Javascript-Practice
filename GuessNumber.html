@@ -14,6 +14,7 @@
         <h2 id="output"></h2>
         <input type="number" id="input">
         <button id="button">Guess</button>
+        <button id="restart">Restart</button>
     </div>
     <script>
         function getRandomInt(max){
@@ -21,28 +22,52 @@
         }
         var RightNumber = getRandomInt(100);
         console.log(RightNumber);
-        
-        var Tries = 5;
+
 
         var button = document.querySelector("#button");
         var input = document.querySelector("#input");
+        var restart = document.querySelector("#restart")
 
-        function CheckNumber (){
-            console.log(input.value)
-            console.log(RightNumber)
-            if (input.value == RightNumber){
-                document.getElementById("output").innerHTML="Right";
-            }
-            if (input.value < RightNumber){
-                Tries--;
-                document.getElementById("output").innerHTML="Too Low " + Tries + " tries left";
-            }
-            if (input.value > RightNumber){
-                Tries--;
-                document.getElementById("output").innerHTML="Too High " + Tries + " tries left";
+        var Tries = 5;
+        var playing = true;
+
+
+        function restart(){
+            Tries = 5;
+            RightNumber = getRandomInt(100);
+            playing = true;
+        }
+
+        function check_attempts(){
+            if (Tries <=0){
+                document.getElementById("output").innerHTML="no more attepmts";
+                playing = false;
             }
         }
+
+        function CheckNumber (){
+            if (playing == true){
+                console.log(input.value)
+                console.log(RightNumber)
+                if (input.value == RightNumber){
+                    document.getElementById("output").innerHTML="Gyze you did it";
+                    playing = false;
+                }
+                if (input.value < RightNumber){
+                    Tries--;
+                    document.getElementById("output").innerHTML="Too Low " + Tries + " tries left";
+                    check_attempts()
+                }
+                if (input.value > RightNumber){
+                    Tries--;
+                    document.getElementById("output").innerHTML="Too High " + Tries + " tries left";
+                    check_attempts()
+                }
+            }
+        }
+
         button.addEventListener("click", CheckNumber);
+        restart.addEventListener("click",restart);
 
         window.addEventListener("keydown", function(event) {
             if (event.key == "Enter") {
