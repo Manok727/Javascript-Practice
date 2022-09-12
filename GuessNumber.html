@@ -34,13 +34,22 @@
                 document.getElementById("output").innerHTML="Right";
             }
             if (input.value < RightNumber){
-                document.getElementById("output").innerHTML="Too Low";
+                Tries--;
+                document.getElementById("output").innerHTML="Too Low " + Tries + " tries left";
             }
             if (input.value > RightNumber){
-                document.getElementById("output").innerHTML="Too High";
+                Tries--;
+                document.getElementById("output").innerHTML="Too High " + Tries + " tries left";
             }
         }
         button.addEventListener("click", CheckNumber);
+
+        window.addEventListener("keydown", function(event) {
+            if (event.key == "Enter") {
+                CheckNumber()
+            }
+        });
+
     </script>
 </body>
 </html> 
