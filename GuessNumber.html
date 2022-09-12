@@ -28,13 +28,15 @@
         var input = document.querySelector("#input");
         var restart = document.querySelector("#restart")
 
-        var Tries = 5;
+        var Tries = 15;
         var playing = true;
 
 
-        function restart(){
-            Tries = 5;
+        function reset(){
+            Tries = 15;
             RightNumber = getRandomInt(100);
+            document.getElementById("output").innerHTML="";
+            input.value = "";
             playing = true;
         }
 
@@ -50,7 +52,7 @@
                 console.log(input.value)
                 console.log(RightNumber)
                 if (input.value == RightNumber){
-                    document.getElementById("output").innerHTML="Gyze you did it";
+                    document.getElementById("output").innerHTML="You did it";
                     playing = false;
                 }
                 if (input.value < RightNumber){
@@ -67,7 +69,7 @@
         }
 
         button.addEventListener("click", CheckNumber);
-        restart.addEventListener("click",restart);
+        restart.addEventListener("click", reset);
 
         window.addEventListener("keydown", function(event) {
             if (event.key == "Enter") {
