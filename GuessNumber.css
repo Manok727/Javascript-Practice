@@ -16,7 +16,14 @@ h2 {
     border-top: double;
     border-radius: 1000px;
 }
-div {
-    margin: 350px;
+.Guess {
+    margin-right: 100px;
+    margin-top: 300px;
+    margin-left: 100px;
+    margin-bottom: 150px;
 }
 
+.pic{
+    
+    filter: saturate();
+}
