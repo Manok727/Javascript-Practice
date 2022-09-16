@@ -25,5 +25,5 @@ h2 {
 
 .pic{
     
-    filter: invert();
+    filter: saturate();
 }
