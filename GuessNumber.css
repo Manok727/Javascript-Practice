@@ -5,13 +5,18 @@ body {
 
 h1 {
     border-style: dotted;
+    border-radius: 15px;
+    border-width: thick;
     border-color: #3f0c0c;
     color: #3b051a;
 }
 h2 {
     color: #38140b;
+    border-bottom: double;
+    border-top: double;
+    border-radius: 1000px;
 }
 div {
-    margin: 400px;
+    margin: 350px;
 }
 
