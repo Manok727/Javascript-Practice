@@ -20,10 +20,48 @@ h2 {
     margin-right: 100px;
     margin-top: 300px;
     margin-left: 100px;
-    margin-bottom: 150px;
+    margin-bottom: 15px;
 }
 
 .pic{
     
     filter: saturate();
+}
+.button{
+    margin-bottom: 10px;
+    display: inline-block;
+    padding: 15px 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: red;
+    outline: none;
+    border: 1px;
+    border-radius: 15px;
+    background-color: rgb(255, 25, 0);
+    box-shadow: 0 5px #a30c0c;
+}
+.button:hover{
+    background-color: #e71f1f;
+}
+.button:active {
+    transform: translateY(4px);
+}
+.restart{
+    margin-bottom: 10px;
+    display: inline-block;
+    padding: 15px 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: rgb(255, 50, 50);
+    outline: none;
+    border: 1px;
+    border-radius: 15px;
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0 5px #a30c0c;
+}
+.restart:hover{
+    background-color: #ce1414;
+}
+.restart:active {
+    transform: translateY(4px);
 }

@@ -13,10 +13,15 @@
         <br/>
         <h2 id="output"></h2>
         <input type="number" id="input">
+    </div>
+    <div class="button">
         <button id="button">Guess</button>
+        
+    </div>
+    <div class="restart">
         <button id="restart">Restart</button>
     </div>
-
+        
     <div class="pic">
         <img src="60412 (1).png" alt="Himeko">
     </div>
@@ -47,7 +52,7 @@
 
         function check_attempts(){
             if (Tries <=0){
-                document.getElementById("output").innerHTML="no more attepmts";
+                document.getElementById("output").innerHTML="No more attepmts the number was " + RightNumber + "";
                 playing = false;
             }
         }
@@ -57,7 +62,7 @@
                 console.log(input.value)
                 console.log(RightNumber)
                 if (input.value == RightNumber){
-                    document.getElementById("output").innerHTML="You did it";
+                    document.getElementById("output").innerHTML="You did it with " + Tries + " attempts remaining";
                     playing = false;
                 }
                 if (input.value < RightNumber){
@@ -79,6 +84,9 @@
         window.addEventListener("keydown", function(event) {
             if (event.key == "Enter") {
                 CheckNumber()
+            }
+            if (event.key == "r") {
+                reset()
             }
         });
 
